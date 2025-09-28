@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const API_URL = import.meta.env.VITE_API_URL;
 // const cors = require('cors');
 
 require('dotenv').config();
