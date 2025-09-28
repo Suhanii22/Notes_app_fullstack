@@ -5,6 +5,7 @@ import Login from './components/Login.jsx';
 import Notes from './components/NotesPage.jsx';
 import Users from './components/Users.jsx';
 import Form from "./components/Form.jsx";
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -23,7 +24,7 @@ function App() {
     // Fetch users
     const fetchUsers = async () => {
         try {
-            const res = await fetch("https://notes-app-lszv.onrender.com/api/users", {
+            const res = await fetch(`${API_URL}/api/users`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();
@@ -42,7 +43,7 @@ function App() {
     const handleUpdate = async (e) => {
         e.preventDefault();
 
-        const res = await fetch('https://notes-app-lszv.onrender.com/api/auth/change-password', {
+        const res = await fetch(`${API_URL}/api/auth/change-password`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

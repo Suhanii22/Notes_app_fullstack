@@ -1,4 +1,4 @@
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Users({ token, users, setUsers }) {
 
@@ -6,7 +6,7 @@ function Users({ token, users, setUsers }) {
 
   const upgradeUser = async (userId) => {
 
-    const res = await fetch(`https://notes-app-lszv.onrender.com/api/users/${userId}/upgrade`, {
+    const res = await fetch(`${API_URL}/api/users/${userId}/upgrade`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Form({ token , onUserAdded}) {//UserInvite
     //   const [showForm, setShowForm] = useState(false);
@@ -13,7 +14,7 @@ export default function Form({ token , onUserAdded}) {//UserInvite
 
     // fetching tenants 
     useEffect(() => {
-        fetch(" https://notes-app-lszv.onrender.com/api/tenants")
+        fetch(`${API_URL}/api/tenants`)
             .then(res => res.json())
             .then(data => {
             // console.log("Fetched tenants:", data); 
@@ -31,7 +32,7 @@ export default function Form({ token , onUserAdded}) {//UserInvite
         const randomPass = generatePassword();
 
       
-            const res = await fetch(" https://notes-app-lszv.onrender.com/api/invite", {
+            const res = await fetch(`${API_URL}/api/invite`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

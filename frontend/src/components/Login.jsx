@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -9,7 +10,7 @@ function Login({ setToken, setRole, setTenant }) {
 
   const login = async () => {
     // console.log(email);
-    const res = await fetch('https://notes-app-lszv.onrender.com/api/auth/login', {
+    const res = await fetch(`${API_URL}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
 
