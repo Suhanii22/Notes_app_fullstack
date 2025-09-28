@@ -7,9 +7,7 @@ const auth = require("../middleware/auth");
 // Fetch all tenant notes
 router.get("/all", auth, async (req, res) => {
  
-    const notes = await Note.find({ tenant: req.user.tenant })
-      .populate("user", "name")
-      .sort({ createdAt: -1 });
+    const notes = await Note.find({ tenant: req.user.tenant }).populate("user", "name").sort({ createdAt: -1 });
     res.json(notes);
  
 });

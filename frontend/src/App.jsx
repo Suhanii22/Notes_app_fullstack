@@ -75,32 +75,33 @@ function App() {
 
 
 
-        <div className='p-6'>
+        <div className='bg-[#e6e5e5]'>
 
             {!token ? (
                 <Login setToken={setToken} setRole={setRole} setTenant={setTenant} />
             ) : (
-                <div>
-                    <div className=' text-3xl text-center mb-10'>Welcome to Notes App</div>
-                    <div>
-                         {/* Button to toggle change password form */}
-                            <button className='absolute right-4 border p-2 bg-gray-100 ' onClick={() => setShowChangePass(!showChangePass)}>
-                                {showChangePass ? 'Cancel' : 'Change Password'}
-                            </button>
+                <div className=''>
+                    <div className=' text-4xl font-bold  mb-10 p-8 bg-[#b1b5cb] '>Notes App</div>
+                    <div className='p-6'>
+                        {/* Button to toggle change password form */}
+                        <button className='absolute   right-6 top-[114px] text-blue-500 pl-2 pr-2 ' onClick={() => setShowChangePass(!showChangePass)}>
+                            {showChangePass ? 'Cancel' : 'Change Password'}
+                        </button>
 
 
                         <div>
-                            <div className='border p-2 m-2 w-[300px]'>
-                        <div>Tenant: {tenant}</div>
-                        <div>Role: {role}</div>
-</div>
-                          
+                            <div className='p-2  m-2 w-[200px]  mb-10 flex flex-col absolute top-0 right-0 gap-2'>
+                                <div> <span className='font-bold pr-2 text-2xl'>Tenant:</span><span className='text-xl'> {tenant}</span></div>
+                                <div><span  className='font-bold pr-2 text-2xl'>Role:</span><span   className='text-xl'> {role}    </span></div>
+                            </div>
+
                             {/* Change password form */}
                             {showChangePass && (
-                                <form  onSubmit={handleUpdate}>
-                                    <div>
-                                        <label>Current Password:</label>
+                                <form className='rounded shadow-2xl bg-[#ffffff] flex flex-col  w-[300px] p-2 absolute right-6 top-[150px] z-3' onSubmit={handleUpdate}>
+                                    <div className='ml-12 mr-12' >
+                                        <label className='pl-4'>Current Password:</label>
                                         <input
+                                        className='border'
                                             type="password"
                                             value={currentPassword}
                                             onChange={(e) => setCurrentPassword(e.target.value)}
@@ -108,9 +109,10 @@ function App() {
                                         />
                                     </div>
 
-                                    <div>
-                                        <label>New Password:</label>
+                                    <div className='ml-12 mr-12'>
+                                        <label  className='pl-8'>New Password:</label>
                                         <input
+                                        className='border'
                                             type="password"
                                             value={newPassword}
                                             onChange={(e) => setNewPassword(e.target.value)}
@@ -118,27 +120,27 @@ function App() {
                                         />
                                     </div>
 
-                                    <button type="submit">Update Password</button>
+                                    <button className='border w-[150px] mt-4 p-1 bg-[#1a51dd] m-auto text-white'  type="submit">Update Password</button>
                                 </form>
                             )}
 
                         </div>
 
-                        <div className='border p-2 m-2' style={{ marginBottom: '20px' }}>
+                        <div className=' p-2 m-2' style={{ marginBottom: '20px' }}>
                             <Notes token={token} />
                         </div>
 
 
 
                         {role === 'admin' && (
-                            <div className='border p-2 m-2'>
-                                <Users  token={token} users={users} setUsers={setUsers} />
+                            <div className=''>
+                                <Users token={token} users={users} setUsers={setUsers} />
 
                             </div>)}
 
 
                         {role === "admin" && (
-                            <button className='border p-2 m-2' onClick={handleToggleInvite}>
+                            <button className='text-blue-500 p-2 m-2 absolute top-[140px] right-[20px] ' onClick={handleToggleInvite}>
                                 {ShowInvite ? "Close Invite Form" : "Invite User"}
                             </button>
                         )}

@@ -69,19 +69,20 @@ export default function Form({ token , onUserAdded}) {//UserInvite
 
 
     return (
-        <div style={{ maxWidth: "400px", margin: "20px auto", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}>
+        // style={{ maxWidth: "400px", margin: "20px auto", padding: "15px", border: "1px solid #ccc", borderRadius: "5px" }}
+        <div className="w-[300px] bg-white shadow-2xl  p-4  rounded-2xl absolute right-0 top-[200px] mr-8 z-5" >
         
             {/* {showForm && ( */}
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-                <input placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input className="p-2 bg-[#edecec]" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+                <input className="p-2 bg-[#edecec]" placeholder="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
-                <select value={role} onChange={(e) => setRole(e.target.value)}>
+                <select className="p-2 bg-[#edecec]" value={role} onChange={(e) => setRole(e.target.value)}>
                     <option value="member">Member</option>
                     <option value="admin">Admin</option>
                 </select>
 
-                <select value={tenantId} onChange={(e) => setTenantId(e.target.value)} required>
+                <select className="p-2 bg-[#edecec]" value={tenantId} onChange={(e) => setTenantId(e.target.value)} required>
                     <option value="">Select Tenant</option>
                     {tenants.map(t => (
                         <option key={t._id} value={t._id}>{t.name}</option>
@@ -91,12 +92,12 @@ export default function Form({ token , onUserAdded}) {//UserInvite
 
 
 
-                <select value={plan} onChange={(e) => setPlan(e.target.value)}>
+                <select className="p-2 bg-[#edecec]" value={plan} onChange={(e) => setPlan(e.target.value)}>
                     <option value="free">Free</option>
                     <option value="pro">Pro</option>
                 </select>
 
-                <button type="submit" style={{ padding: "5px", cursor: "pointer" }}>Create User</button>
+                <button className="p-2 bg-[#4c58c2] text-white" type="submit" style={{ padding: "5px", cursor: "pointer" }}>Create User</button>
             </form>
             
 
