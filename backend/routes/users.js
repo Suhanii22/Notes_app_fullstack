@@ -5,6 +5,7 @@ const auth = require('../middleware/auth');
 
 
 router.get("/", auth, async (req, res) => {
+
   try {
     if (req.user.role !== "admin") {
       return res.json({ error: "Access denied" });
@@ -21,6 +22,7 @@ router.get("/", auth, async (req, res) => {
 
 // Upgrade user plan
 router.put("/:id/upgrade", auth, async (req, res) => {
+
  
   
     if (req.user.role !== "admin") {
