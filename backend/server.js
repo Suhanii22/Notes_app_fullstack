@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const API_URL = process.env.VITE_API_URL;
+const API_URL_ = process.env.VITE_API_URL;
 // const cors = require('cors');
 
 require('dotenv').config();
@@ -10,7 +10,7 @@ const app = express();
 
 const cors = require('cors');
 
-const allowedOrigins = ['http://localhost:5173', `${API_URL}`]; 
+const allowedOrigins = ['http://localhost:5173', `${API_URL_}`]; 
 
 app.use(cors({
   origin: function(origin, callback) {
