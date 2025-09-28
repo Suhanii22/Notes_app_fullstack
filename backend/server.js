@@ -9,7 +9,7 @@ const app = express();
 
 const cors = require('cors');
 
-const allowedOrigins = ['http://localhost:5173', 'https://notes-app-fullstack-one.vercel.app/']; 
+const allowedOrigins = ['http://localhost:5173', `${API_URL}`]; 
 
 app.use(cors({
   origin: function(origin, callback) {
