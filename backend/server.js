@@ -1,12 +1,37 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+// const cors = require('cors');
 
 require('dotenv').config();
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-app.use(cors());
+
+const cors = require('cors');
+
+const allowedOrigins = ['http://localhost:5173', 'https://visionary-caramel-0f75f4.netlify.app']; 
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); 
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error('CORS policy blocked this origin'), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET','POST','PUT','DELETE','OPTIONS']
+}));
+
+
+
+// Handle preflight OPTIONS requests
+app.options('*', cors());
+
+
+
+
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URL, {

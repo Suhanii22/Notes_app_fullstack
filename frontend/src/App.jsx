@@ -23,7 +23,7 @@ function App() {
     // Fetch users
     const fetchUsers = async () => {
         try {
-            const res = await fetch("http://localhost:5000/api/users", {
+            const res = await fetch("https://notes-app-lszv.onrender.com/api/users", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();
@@ -42,7 +42,7 @@ function App() {
     const handleUpdate = async (e) => {
         e.preventDefault();
 
-        const res = await fetch('http://localhost:5000/api/auth/change-password', {
+        const res = await fetch('https://notes-app-lszv.onrender.com/api/auth/change-password', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

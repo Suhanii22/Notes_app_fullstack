@@ -6,7 +6,7 @@ function Users({ token, users, setUsers }) {
 
   const upgradeUser = async (userId) => {
 
-    const res = await fetch(`http://localhost:5000/api/users/${userId}/upgrade`, {
+    const res = await fetch(`https://notes-app-lszv.onrender.com/api/users/${userId}/upgrade`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

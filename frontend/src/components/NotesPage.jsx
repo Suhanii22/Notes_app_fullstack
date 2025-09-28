@@ -10,7 +10,7 @@ function NotesPage({ token, currentUserId, currentUserPlan }) {
   // Fetching My Notes
   const fetchMyNotes = useCallback(async () => {
 
-    const res = await fetch("http://localhost:5000/api/notes/my", {
+    const res = await fetch(" https://notes-app-lszv.onrender.com/api/notes/my", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -21,7 +21,7 @@ function NotesPage({ token, currentUserId, currentUserPlan }) {
   // Fetching All Notes of Tenant
   const fetchAllNotes = useCallback(async () => {
 
-    const res = await fetch("http://localhost:5000/api/notes/all", {
+    const res = await fetch("https://notes-app-lszv.onrender.com/api/notes/all", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -44,7 +44,7 @@ function NotesPage({ token, currentUserId, currentUserPlan }) {
     }
 
 
-    const res = await fetch("http://localhost:5000/api/notes", {
+    const res = await fetch("https://notes-app-lszv.onrender.com/api/notes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ function NotesPage({ token, currentUserId, currentUserPlan }) {
   // Delete Note
   const handleDelete = async (id) => {
 
-    await fetch(`http://localhost:5000/api/notes/${id}`, {
+    await fetch(`https://notes-app-lszv.onrender.com/api/notes/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -88,7 +88,7 @@ function NotesPage({ token, currentUserId, currentUserPlan }) {
     if (!newTitle || !newContent) return;
 
 
-    const res = await fetch(`http://localhost:5000/api/notes/${note._id}`, {
+    const res = await fetch(`https://notes-app-lszv.onrender.com/api/notes/${note._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -13,7 +13,7 @@ export default function Form({ token , onUserAdded}) {//UserInvite
 
     // fetching tenants 
     useEffect(() => {
-        fetch("http://localhost:5000/api/tenants")
+        fetch(" https://notes-app-lszv.onrender.com/api/tenants")
             .then(res => res.json())
             .then(data => {
             // console.log("Fetched tenants:", data); 
@@ -31,7 +31,7 @@ export default function Form({ token , onUserAdded}) {//UserInvite
         const randomPass = generatePassword();
 
       
-            const res = await fetch("http://localhost:5000/api/invite", {
+            const res = await fetch(" https://notes-app-lszv.onrender.com/api/invite", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -9,7 +9,7 @@ function Login({ setToken, setRole, setTenant }) {
 
   const login = async () => {
     // console.log(email);
-    const res = await fetch('http://localhost:5000/api/auth/login', {
+    const res = await fetch('https://notes-app-lszv.onrender.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
 

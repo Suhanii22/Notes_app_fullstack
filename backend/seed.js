@@ -2,9 +2,17 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const Tenant = require('./models/Tenant');
 const bcrypt = require('bcryptjs');
+require("dotenv").config();
 
 
-mongoose.connect('mongodb://localhost/notes-app');
+
+// mongoose.connect('mongodb://localhost/notes-app');
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to MongoDB for seeding"))
+.catch((err) => console.error("MongoDB connection error:", err));
 
 async function seed() {
   // Creating tenants
