@@ -32,3 +32,21 @@ This fullstack web application allows users to create, read, update, and delete 
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
 - **Tools:** Git, GitHub  
+
+
+## Seeded Users for Testing / Demo
+
+The application comes with some pre-created users for testing purposes. You can log in using these accounts:
+
+| Name           | Email               | Password   | Role   | Tenant        | Plan  |
+|----------------|---------------------|------------|--------|---------------|-------|
+| Admin Acme     | admin@acme.test     | password   | Admin  | Acme          | Pro   |
+| User Acme      | user@acme.test      | password   | Member | Acme          | Free  |
+| Admin Globex   | admin@globex.test   | password   | Admin  | Globex        | Pro   |
+| User Globex    | user@globex.test    | password   | Member | Globex        | Free  |
+
+> **Notes:**  
+> - Admin users have full access to manage their tenant.  
+> - Member users have limited access.  
+> - These accounts are pre-seeded for demo purposes.  
+
