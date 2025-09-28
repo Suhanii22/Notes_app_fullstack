@@ -10,7 +10,7 @@ const app = express();
 
 const cors = require('cors');
 
-const allowedOrigins = ['http://localhost:5173', `${URL}`]; 
+const allowedOrigins = ['http://localhost:5173', `${URL}`, "https://notes-app-fullstack-9k6rm5qaw-suhanii22s-projects.vercel.app"]; 
 
 app.use(cors({
   origin: function(origin, callback) {
