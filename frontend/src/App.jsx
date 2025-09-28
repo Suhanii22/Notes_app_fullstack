@@ -77,6 +77,8 @@ function App() {
 
 
         <div className='bg-[#e6e5e5]'>
+           { console.log(API_URL) }
+            
 
             {!token ? (
                 <Login setToken={setToken} setRole={setRole} setTenant={setTenant} />
