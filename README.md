@@ -1,38 +1,34 @@
-# Project Name
+# Notes App Fullstack Web Application
 
-A fullstack web application **(In Progress)**.
-
-- Backend: ✅ Implemented and working
-- Frontend: ⚙️ Currently in development using **React + Tailwind CSS**
+A fullstack web application (Completed) built with React, Tailwind CSS, Node.js, Express.js, and MongoDB.
 
 ---
 
 ## Project Overview
-This project is a fullstack web application. The backend APIs are fully functional, and the frontend is under development. The UI, built with **Tailwind CSS**, will allow users to interact with the application, fetching and sending data via the backend.
+This fullstack web application allows users to create, read, update, and delete notes while managing authentication and secure data handling. The frontend is fully integrated with the backend APIs, providing a smooth and dynamic user experience.
 
 ---
 
-## Current Functionalities
+## Features
 
-### Backend
-- User authentication (login/signup)
-- CRUD operations for main resources
-- API endpoints for fetching and updating data
-- Database integration (MongoDB)
-- Secure environment variable handling
+### Backend 
+- User authentication (login)  
+- CRUD operations for notes and users  
+- RESTful API endpoints for fetching and updating data  
+- MongoDB database integration  
+- Secure handling of environment variables  
 
-### Frontend (In Progress)
-- Initial React setup with **Tailwind CSS**
-- Basic routing and page layout
-- Connecting frontend to backend APIs (fetch requests)
-- UI components for displaying data dynamically
-- Responsive design with Tailwind utilities
+### Frontend 
+- React frontend with Tailwind CSS styling  
+- Fully functional routing and page layouts  
+- Integrated with backend APIs for real-time data operations  
+- Dynamic UI components for displaying notes and user data  
+- Fully responsive design for all devices  
 
 ---
 
 ## Tech Stack
-- **Frontend:** React, Tailwind CSS, HTML, CSS, JavaScript
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Tools:** Git, GitHub
-
+- **Frontend:** React, Tailwind CSS, HTML, CSS, JavaScript  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Tools:** Git, GitHub  
