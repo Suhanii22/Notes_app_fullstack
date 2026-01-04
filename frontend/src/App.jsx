@@ -55,7 +55,7 @@ function App() {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const data = await res.json();
-            setUsers(data);
+            setUsers(data.users);
         } catch (err) {
             console.error(err);
         }
