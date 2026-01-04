@@ -116,6 +116,7 @@ function App() {
   setTenant('');
   setCurrentUserId('');
   setCurrentUserPlan('');
+  console.log("token is cleared")
 };
 
 
@@ -137,14 +138,14 @@ function App() {
                     <div className='p-6'>
 
 
-                      {token && (
-  <button
-    className="absolute top-6 right-6 p-2 bg-red-500 text-white rounded"
-    onClick={handleLogout}
-  >
-    Logout
-  </button>
-)}
+                      
+                    <button
+                        className="absolute top-16 right-6 p-2 bg-red-500 text-white rounded"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
+
 
 
                         {/* Button to toggle change password form */}
