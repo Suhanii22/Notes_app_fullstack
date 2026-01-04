@@ -5,21 +5,46 @@ import Login from './components/Login.jsx';
 import Notes from './components/NotesPage.jsx';
 import Users from './components/Users.jsx';
 import Form from "./components/Form.jsx";
+import jwtDecode from "jwt-decode";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 
 
 
 function App() {
+
+// const [token, setToken] = useState('');
+//   const [currentUserId, setCurrentUserId] = useState('');
+//   const [currentUserPlan, setCurrentUserPlan] = useState('');
+
+
+
+
     const [token, setToken] = useState('');
     const [role, setRole] = useState('');
     const [tenant, setTenant] = useState('');
+    
+  const [currentUserId, setCurrentUserId] = useState('');
+  const [currentUserPlan, setCurrentUserPlan] = useState('');
+
     const [ShowInvite, setShowInvite] = useState(false);
 
     const [users, setUsers] = useState([]);
     const [showChangePass, setShowChangePass] = useState(false);
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+
+
+      // decode token whenever it changes
+  useEffect(() => {
+    if (token) {
+      const decoded = jwtDecode(token);
+      setCurrentUserId(decoded.id);
+      setCurrentUserPlan(decoded.plan);
+    }
+  }, [token]);
+
 
     // Fetch users
     const fetchUsers = async () => {
@@ -130,7 +155,7 @@ function App() {
                         </div>
 
                         <div className=' p-2 m-2' style={{ marginBottom: '20px' }}>
-                            <Notes token={token} />
+                            <Notes token={token} currentUserId={currentUserId} currentUserPlan={currentUserPlan} />
                         </div>
 
 
