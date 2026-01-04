@@ -40,7 +40,8 @@ function Users({ token, users, setUsers }) {
             <p><span className="font-bold pr-2 pl-2 ">Email:</span><span>{user.email}</span></p>
             <p><span className="font-bold pr-2 pl-2 ">Role: </span><span>{user.role} </span></p>
             <p><span className="font-bold pr-2 pl-2 ">Plan: </span><span>{user.plan} </span></p>
-            </div> <div>
+            </div> 
+            <div>
             {user.plan === "free" && (
               <button className="text-green-700 border rounded-2xl p-2 m-1 " onClick={() => upgradeUser(user._id)} style={{ marginLeft: 10 }}>Upgrade</button>
             )}

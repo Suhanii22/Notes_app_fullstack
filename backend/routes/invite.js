@@ -4,10 +4,10 @@ const Tenant = require("../models/Tenant");
 const User = require('../models/User');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-
+const auth = require('../middleware/auth'); 
 
 //  /api/invite
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   
     const { name, email, role, tenant: tenantId, plan, password } = req.body;
 
