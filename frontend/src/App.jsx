@@ -142,7 +142,7 @@ function App() {
 
                       
                     <button
-                        className="absolute top-36 right-6 p-2 bg-red-500 text-white rounded"
+                        className="absolute top-6 right-46 p-2 bg-red-500 text-white rounded"
                         onClick={handleLogout}
                     >
                         Logout
