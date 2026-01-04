@@ -68,14 +68,16 @@ function App() {
 
 
     useEffect(() => {
-       
-         if (token) {
-      const decoded = jwtDecode(token);
-      setCurrentUserId(decoded.id);
-      setCurrentUserPlan(decoded.plan);
-    }
-    }, [token]);
-
+  if (token) {
+    const decoded = jwtDecode(token);
+    setCurrentUserId(decoded.id);
+    setCurrentUserPlan(decoded.plan);
+  } else {
+    // clear current user info
+    setCurrentUserId('');
+    setCurrentUserPlan('');
+  }
+}, [token]);
 
 
 
