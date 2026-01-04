@@ -75,7 +75,7 @@ function App() {
       setCurrentUserPlan(decoded.plan);
     }
     }, [token]);
-    
+
 
 
 
@@ -110,6 +110,15 @@ function App() {
         setShowInvite(prev => !prev); //toggle
     };
 
+    const handleLogout = () => {
+  setToken('');
+  setRole('');
+  setTenant('');
+  setCurrentUserId('');
+  setCurrentUserPlan('');
+};
+
+
 
 
     return (
@@ -126,6 +135,18 @@ function App() {
                 <div className=''>
                     <div className=' text-4xl font-bold  mb-10 p-8 bg-[#b1b5cb] '>Notes App</div>
                     <div className='p-6'>
+
+
+                      {token && (
+  <button
+    className="absolute top-6 right-6 p-2 bg-red-500 text-white rounded"
+    onClick={handleLogout}
+  >
+    Logout
+  </button>
+)}
+
+
                         {/* Button to toggle change password form */}
                         <button className='absolute   right-6 top-[114px] text-blue-500 pl-2 pr-2 ' onClick={() => setShowChangePass(!showChangePass)}>
                             {showChangePass ? 'Cancel' : 'Change Password'}
