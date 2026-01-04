@@ -113,7 +113,7 @@ function App() {
     };
 
     const handleLogout = () => {
-  setToken('null');
+  setToken('');
   setRole('');
   setTenant('');
   setCurrentUserId('');
