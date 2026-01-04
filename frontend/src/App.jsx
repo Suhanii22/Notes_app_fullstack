@@ -5,7 +5,9 @@ import Login from './components/Login.jsx';
 import Notes from './components/NotesPage.jsx';
 import Users from './components/Users.jsx';
 import Form from "./components/Form.jsx";
-import jwtDecode from "jwt-decode";
+// import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
+
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -37,13 +39,13 @@ function App() {
 
 
       // decode token whenever it changes
-  useEffect(() => {
-    if (token) {
-      const decoded = jwtDecode(token);
-      setCurrentUserId(decoded.id);
-      setCurrentUserPlan(decoded.plan);
-    }
-  }, [token]);
+//   useEffect(() => {
+//     if (token) {
+//       const decoded = jwtDecode(token);
+//       setCurrentUserId(decoded.id);
+//       setCurrentUserPlan(decoded.plan);
+//     }
+//   }, [token]);
 
 
     // Fetch users
@@ -62,6 +64,19 @@ function App() {
     useEffect(() => {
         fetchUsers();
     }, [token]);
+
+
+
+    useEffect(() => {
+       
+         if (token) {
+      const decoded = jwtDecode(token);
+      setCurrentUserId(decoded.id);
+      setCurrentUserPlan(decoded.plan);
+    }
+    }, [token]);
+    
+
 
 
 
