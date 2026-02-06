@@ -46,7 +46,7 @@ const hashedUsers = await hashUsers(users);
 
   await User.create(hashedUsers);
 
-  // console.log(' Seed ');
+  
   mongoose.disconnect();
 }
 

@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  role: { type: String, default: 'member' }, // admin or member
+  role: { type: String, default: 'member' },
   tenant: { type: mongoose.Schema.Types.ObjectId, ref: 'Tenant' },
   plan: { type: String, default: 'free' }
 });

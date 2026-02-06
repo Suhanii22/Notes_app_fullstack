@@ -13,7 +13,7 @@ router.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
 
-    // console.log(req.body)
+    
 
     const user = await User.findOne({ email}).populate("tenant");
 
@@ -24,6 +24,7 @@ router.post("/login", async (req, res) => {
     const plan = user.role === "admin" ? "pro" : user.plan;
 
     const isMatch = await bcrypt.compare(password, user.password);
+
     if (!isMatch) {
       return res.json({ success: false, message: "Invalid credentials2" });
     }
@@ -51,12 +52,14 @@ router.post("/login", async (req, res) => {
 
 
 // Change password
+
 router.put('/change-password', auth, async (req, res) => {
  
     const { currentPassword, newPassword } = req.body;
     const user = req.user; 
 
     const isMatch = await bcrypt.compare(currentPassword, user.password);
+    
     if (!isMatch) return res.json({ error: 'Current password is incorrect' });
 
     const hashedNew = await bcrypt.hash(newPassword, 10);
